@@ -18,12 +18,12 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_add -> {
-             //   moveToFragment(SearchFragment())
+             //   moveToFragment(AddFragment())
                 textView.setText("Add")
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_graph -> {
-                //   moveToFragment(SearchFragment())
+                //   moveToFragment(GraphFragment())
                 textView.setText("graph")
                 return@OnNavigationItemSelectedListener true
             }
@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-
+        textView = findViewById(R.id.text)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        textView.findViewById<TextView>(R.id.message)
+
     }
 }
