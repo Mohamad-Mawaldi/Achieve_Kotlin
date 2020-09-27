@@ -29,12 +29,17 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var list = ArrayList<Task>()
+        var adapter = RVTasksAdapter(list, activity )
         list.add(Task("title", "Body", "2020,09", false  ) )
         list.add(Task("title1", "Body", "2020,09", false  ) )
         list.add(Task("title2", "Body", "2020,09", false  ) )
-        list.add(Task("title3", "Body", "2020,09", false  ) )
+        list.add(Task("title4", "Body", "2020,09", false  ) )
+        list.add(Task("title5", "Body", "2020,09", false  ) )
+        list.add(Task("title6", "Body", "2020,09", true  ) )
+        list.add(Task("title7", "Body", "2020,09", true  ) )
+        list.add(Task("title8", "Body", "2020,09", true  ) )
 
-        tasksRecyclerView.adapter = RVTasksAdapter(list)
+        tasksRecyclerView.adapter = adapter
         tasksRecyclerView.layoutManager = LinearLayoutManager(activity)
         tasksRecyclerView.setHasFixedSize(true)
 
