@@ -1,75 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_margin="10dp"
     android:id="@+id/task_card"
-    >
-
-   <RelativeLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:gravity="center"
-       android:padding="10dp"
-       >
-
-
-       <ImageView
-           android:layout_width="70dp"
-           android:layout_height="70dp"
-           android:layout_centerVertical="true"
-           android:id="@+id/done_check"
-           android:layout_marginRight="20dp"
-           android:layout_alignParentLeft="true"
-           android:background="@drawable/circle"/>
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    android:animateLayoutChanges="true">
 
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:animateLayoutChanges="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/done_check"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/circle"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:id="@+id/header_textView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_toEndOf="@+id/done_check"
+                android:text="Header"
+                android:textSize="28dp"
+                android:layout_marginEnd="20dp"/>
 
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="40dp"
-           android:layout_marginBottom="15px"
-           android:text="Header"
-           android:textSize="20dp"
-           android:id="@+id/header_textView"
-           android:layout_toEndOf="@+id/done_check"
-           android:gravity="center_vertical"
-           />
-
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:text="Body"
-           android:textSize="18dp"
-           android:id="@+id/bodyText_view"
-           android:layout_toEndOf="@+id/done_check"
-           android:layout_below="@+id/header_textView"
-           android:layout_toStartOf="@+id/date_textView"
-           android:gravity="center_vertical"
+        </LinearLayout>
 
 
-           />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:id="@+id/expandableLayout"
+            android:layout_margin="20dp"
+            android:animateLayoutChanges="true"
+            >
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="40dp"
-           android:text="date"
-           android:textSize="16dp"
-           android:id="@+id/date_textView"
-           android:layout_below="@+id/header_textView"
-           android:layout_alignParentRight="true"
-           android:gravity="center"
-           android:layout_marginLeft="20dp"
+            <Button
+                android:id="@+id/editButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="edit" />
 
-           />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/editButton"
+                android:text="delete" />
+
+            <TextView
+                android:id="@+id/date_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bodyText_view"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:text="date"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:id="@+id/bodyText_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editButton"
+                android:text="Body"
+                android:textSize="18dp"
+                android:layout_marginTop="20dp"/>
 
 
 
-   </RelativeLayout>
+        </RelativeLayout>
 
 
+    </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+
+</androidx.cardview.widget.CardView>
 
