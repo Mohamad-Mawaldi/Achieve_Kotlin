@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.Dimension
 
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentActivity
@@ -40,15 +41,17 @@ class RVTasksAdapter(private val tasksList: List<Task>, private val activity: Fr
 
 
         val isExpanded = currentTask.isExpanded
-        holder.expandableLayout.visibility = if (isExpanded) View.VISIBLE else View.GONE
+
+        holder.expandableLayout.animate().apply {
+            duration = 1000
+            holder.expandableLayout.visibility = if (isExpanded) View.VISIBLE else View.GONE
+        }.start()
+
 
         holder.linearLayout.setOnClickListener {
             currentTask.isExpanded =!currentTask.isExpanded
-            notifyDataSetChanged()
+            this.notifyItemChanged(position)
         }
-
-
-
 
 
         when (currentTask.isDone) {
@@ -59,22 +62,16 @@ class RVTasksAdapter(private val tasksList: List<Task>, private val activity: Fr
 
         holder.checkBox.setOnClickListener {
 
- /*           holder.checkBox.animate().apply {
+            holder.checkBox.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction() {
-
                 when (currentTask.isDone) {
                     true -> currentTask.isDone = false
                     false -> currentTask.isDone = true
                 }
-                this.notifyDataSetChanged()
-            }.start()*/
-            when (currentTask.isDone) {
-                true -> currentTask.isDone = false
-                false -> currentTask.isDone = true
-            }
-            this.notifyDataSetChanged()
+                this.notifyItemChanged(position)
+            }.start()
         }
 
        }
