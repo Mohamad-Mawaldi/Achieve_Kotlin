@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,8 +7,6 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     tools:context=".Fragments.HomeFragment" >
-
-
 
    <ScrollView
        android:layout_width="match_parent"
@@ -20,14 +17,14 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:animateLayoutChanges="true"
-          android:background="#FFFFFF">
+          android:background="@color/white">
 
          <RelativeLayout
              android:id="@+id/toolBar"
              android:layout_width="match_parent"
              android:layout_height="200dp"
              android:layout_margin="0dp"
-             android:background="@color/cardview_dark_background">
+             android:background="@drawable/auth_background">
 
             <ImageView
                 android:layout_width="200dp"
@@ -36,13 +33,14 @@
                 android:src="@drawable/achieve" />
 
             <Button
+                android:id="@+id/logout_button"
                 android:layout_width="100dp"
                 android:layout_height="60dp"
                 android:layout_alignParentRight="true"
                 android:background="#00FFFFFF"
                 android:text="Log out"
                 android:textAllCaps="false"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/white"
                 android:textSize="20dp" />
 
          </RelativeLayout>
@@ -52,23 +50,19 @@
              android:id="@+id/tasksRecyclerView"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
+             android:nestedScrollingEnabled="false"
              android:layout_marginTop="150dp"
              app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+             android:scrollbars="none"
              tools:listitem="@layout/task_layout">
-
          </androidx.recyclerview.widget.RecyclerView>
-
-
-
 
       </RelativeLayout>
 
-
    </ScrollView>
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/create-task"
+        android:id="@+id/create_task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -78,13 +72,11 @@
         android:baselineAlignBottom="true"
         android:clickable="true"
         android:outlineAmbientShadowColor="@color/cardview_dark_background"
-        android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="#149914"
+        android:src="@drawable/ic_add_floating_button"
+        android:background="@drawable/button_background"
         app:elevation="10dp"
-        android:scaleX="1.4"
-        android:scaleY="1.4"/>
-
-
+        android:scaleX="1.2"
+        android:scaleY="1.2"/>
 
 </RelativeLayout>
 

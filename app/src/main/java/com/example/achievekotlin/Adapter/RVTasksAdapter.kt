@@ -64,13 +64,16 @@ class RVTasksAdapter(private val tasksList: List<Task>, private val activity: Fr
 
             holder.checkBox.animate().apply {
                 duration = 1000
-                rotationYBy(360f)
-            }.withEndAction() {
+                //rotationYBy(360f)
+                scaleY(1f)
+                scaleX(1f)
+            }.withStartAction {
                 when (currentTask.isDone) {
                     true -> currentTask.isDone = false
                     false -> currentTask.isDone = true
                 }
                 this.notifyItemChanged(position)
+
             }.start()
         }
 

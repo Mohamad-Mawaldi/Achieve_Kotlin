@@ -6,23 +6,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.achievekotlin.Adapter.RVTasksAdapter
 import com.example.achievekotlin.Models.Task
 import com.example.achievekotlin.R
+import com.example.achievekotlin.iFragmentListener
 import kotlinx.android.synthetic.main.fragment_home.*
-import java.util.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlin.collections.ArrayList
 
 
 class HomeFragment : Fragment() {
+
+    private lateinit var fragmentListener: iFragmentListener
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        fragmentListener = activity as iFragmentListener
+
+        view.logout_button.setOnClickListener {
+            fragmentListener.logOut()
+        }
+
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
