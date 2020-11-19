@@ -67,7 +67,6 @@ class SignUpFragment : Fragment() {
                                 .setValue(
                                     UserInfo(
                                         view.username.text.toString(),
-                                        view.password.text.toString(),
                                         view.email.text.toString()
                                     )
                                 ).addOnCompleteListener {
