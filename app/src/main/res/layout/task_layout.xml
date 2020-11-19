@@ -57,37 +57,50 @@
             android:visibility="gone">
 
             <Button
-                android:id="@+id/editButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
+                android:layout_width="25dp"
+                android:id="@+id/deleteButton"
                 android:layout_alignParentRight="true"
-                android:text="edit" />
+                android:background="@drawable/ic_baseline_delete_24"
+                android:layout_marginTop="5dp"/>
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@+id/editButton"
-                android:text="delete" />
+                android:id="@+id/editButton"
+                android:layout_height="25dp"
+                android:layout_width="25dp"
+                android:layout_toStartOf="@+id/deleteButton"
+                android:background="@drawable/ic_baseline_edit_24"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"/>
+
 
             <TextView
                 android:id="@+id/date_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/bodyText_view"
+                android:minHeight="50dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:gravity="center"
                 android:text="date"
                 android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/titleText_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date_textView"
+                android:text="Header"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"/>
 
             <TextView
                 android:id="@+id/bodyText_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/editButton"
-                android:layout_marginTop="20dp"
+                android:layout_below="@+id/titleText_view"
                 android:text="Body"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:layout_marginTop="15dp"/>
 
 
         </RelativeLayout>

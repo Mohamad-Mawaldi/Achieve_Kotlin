@@ -1,5 +1,3 @@
 package com.example.achievekotlin.Models
 
-import java.util.*
-
-data class Task (var header:String, var body:String, var date: String, var isDone:Boolean, var isExpanded:Boolean = false )
+data class Task (var title:String, var body:String, var date: String, var id: String, var done: Boolean = false , var isExpanded: Boolean = false)

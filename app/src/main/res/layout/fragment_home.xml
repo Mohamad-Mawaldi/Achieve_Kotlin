@@ -11,11 +11,13 @@
    <ScrollView
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:animateLayoutChanges="true">
+       android:animateLayoutChanges="true"
+       android:fillViewport="true"
+       android:id="@+id/scrollView">
 
       <RelativeLayout
           android:layout_width="match_parent"
-          android:layout_height="match_parent"
+          android:layout_height="wrap_content"
           android:animateLayoutChanges="true"
           android:background="@color/white">
 
@@ -50,33 +52,33 @@
              android:id="@+id/tasksRecyclerView"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:nestedScrollingEnabled="false"
              android:layout_marginTop="150dp"
-             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+             android:nestedScrollingEnabled="false"
              android:scrollbars="none"
-             tools:listitem="@layout/task_layout">
-         </androidx.recyclerview.widget.RecyclerView>
+             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+             tools:listitem="@layout/task_layout"
+             />
 
       </RelativeLayout>
 
    </ScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/create_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="30dp"
-        android:baselineAlignBottom="true"
-        android:clickable="true"
-        android:outlineAmbientShadowColor="@color/cardview_dark_background"
-        android:src="@drawable/ic_add_floating_button"
-        android:background="@drawable/button_background"
-        app:elevation="10dp"
-        android:scaleX="1.2"
-        android:scaleY="1.2"/>
+   <com.google.android.material.floatingactionbutton.FloatingActionButton
+       android:id="@+id/add_floating_btn"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentRight="true"
+       android:layout_alignParentBottom="true"
+       android:layout_marginRight="15dp"
+       android:layout_marginBottom="15dp"
+       android:background="@drawable/button_background"
+       android:baselineAlignBottom="true"
+       android:clickable="true"
+       android:scaleY="1.2"
+       android:scaleX="1.2"
+       android:outlineAmbientShadowColor="@color/cardview_dark_background"
+       android:src="@drawable/ic_add_floating_button"
+       app:elevation="10dp" />
 
 </RelativeLayout>
 
